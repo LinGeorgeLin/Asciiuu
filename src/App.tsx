@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Upload, ArrowRight, Image as ImageIcon, Copy, Download, RefreshCw, Settings2, Monitor, Zap, Sliders, Sun, Moon, Terminal, Cpu, Activity, Info, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from "@vercel/analytics/next"
 
 const ASCII_SETS = {
   standard: '@%#*+=-:. ',
@@ -115,7 +116,7 @@ export default function App() {
   return (
     <div className="min-h-screen relative flex flex-col items-center pt-4 px-4 pb-0 md:pt-12 md:px-12 md:pb-0 overflow-x-hidden selection:bg-white/10">
       <div className="bg-grain" />
-      
+      <Analytics />
       {/* Metallic Background Glows */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-white/[0.02] blur-[150px] rounded-full" />
