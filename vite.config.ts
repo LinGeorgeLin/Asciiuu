@@ -15,9 +15,16 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    optimizeDeps: {
+      include: ['@vercel/analytics/react'] // 強制 Vite 預先編譯這個套件
+    },
+    build: {
+      target: 'esnext', // 確保編譯目標支援 ?? 等現代語法
+      commonjsOptions: {
+        transformMixedEsModules: true, // 處理混合模組格式
+      },
+    },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
