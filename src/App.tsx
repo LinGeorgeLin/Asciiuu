@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Upload, ArrowRight, Image as ImageIcon, Copy, Download, RefreshCw, Settings2, Monitor, Zap, Sliders, Sun, Moon, Terminal, Cpu, Activity, Info, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const ASCII_SETS = {
   standard: '@%#*+=-:. ',
